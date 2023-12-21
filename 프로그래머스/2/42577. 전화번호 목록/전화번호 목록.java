@@ -1,19 +1,13 @@
 import java.util.HashSet;
+import java.util.Arrays;
 
 class Solution {
     public boolean solution(String[] phone_book) {
-        HashSet<String> set = new HashSet<>();
-
-        for (String phone : phone_book) {
-            set.add(phone);
-        }
-
-        for (String phone : phone_book) {
-            for (int i = 1; i < phone.length(); i++) {
-                // 접두사가 HashSet에 있는지 확인
-                if (set.contains(phone.substring(0, i))) {
+        // 적은거부터 정렬
+        Arrays.sort(phone_book);
+        for (int i = 0; i < phone_book.length - 1; i++) {
+            if (phone_book[i + 1].startsWith(phone_book[i])) {
                 return false;
-                }
             }
         }
         return true;
