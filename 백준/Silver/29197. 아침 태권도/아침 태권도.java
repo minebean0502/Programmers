@@ -40,7 +40,7 @@ public class Main {
         // 보이는 학생수
         int visibleStudents = 0;
 
-        // Check each student to see if they are visible.
+        // 학생이 보이는지 안보이는지 체크하기
         for (int i = 0; i < n; i++) {
             boolean isVisible = true;
             for (int j = 0; j < n; j++) {
