@@ -6,13 +6,14 @@ class Solution {
     
     public String solution(String s) {
         String[] array = s.split(" ");
-        Arrays.sort(array);
-        int[] arrays = new int[array.length];
+        int max = Integer.parseInt(array[0]);
+        int min = Integer.parseInt(array[0]);
         for (int i = 0; i < array.length; i++) {
-            arrays[i] = Integer.parseInt(array[i]);
+            max = Math.max(max, Integer.parseInt(array[i]));
+            min = Math.min(min, Integer.parseInt(array[i]));
         }
-        Arrays.sort(arrays);
         StringBuilder sb = new StringBuilder();
-        return String.valueOf(sb.append(arrays[0]+ " " + arrays[arrays.length-1]));
+        sb.append(min + " " + max);
+        return String.valueOf(sb);
     }
 }
