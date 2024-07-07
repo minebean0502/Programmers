@@ -1,20 +1,19 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
+import java.util.*;
 
-
-public class Main { // https://www.acmicpc.net/problem/2750
+public class Main { 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int inputNum = Integer.parseInt(br.readLine());
-        int[] array = new int[inputNum];
+        List<Integer> list = new ArrayList<>();
         for (int i = 0; i < inputNum; i++) {
-            array[i] = Integer.parseInt(br.readLine());
+            list.add(Integer.parseInt(br.readLine()));
         }
-        Arrays.sort(array);
-        for (int i = 0; i < array.length; i++) {
-            System.out.println(array[i]);
+        list.sort((i1, i2) -> i1 - i2);
+        for (int i = 0; i < list.size(); i++) {
+            System.out.println(list.get(i));
         }
     }
 }
